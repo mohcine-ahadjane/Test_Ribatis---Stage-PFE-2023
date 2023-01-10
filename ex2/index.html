@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulaire de personne</title>
+    
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  <body onload="toggleForm()">
+    <form>
+      <h2>Type de personne</h2>
+      <input
+        type="radio"
+        name="personType"
+        value="personne physique"
+        checked
+        onchange="toggleForm()"
+      />
+      Personne physique
+      <input
+        type="radio"
+        name="personType"
+        value="personne morale"
+        onchange="toggleForm()"
+      />
+      Personne morale <br /><br />
+      <div id="form-personne-physique">
+        <h2>Personne physique</h2>
+        <label for="civilite">Civilité:</label>
+        <select class="personne-physique" name="civilite" required>
+          <option value="monsieur">MONSIEUR</option>
+          <option value="madame">MADAME</option>
+        </select>
+        <br /><br />
+        <label for="nom" class="starlabel">Nom :</label>
+        <input class="personne-physique starlabel" type="text"  name="nom" required />
+        <br /><br />
+        <label for="prenom" class="starlabel">Prénom:</label>
+        <input class="personne-physique" type="text" name="prenom" required />
+        <br /><br />
+        <label for="cin" class="starlabel">CIN:</label>
+        <input class="personne-physique" type="text" name="cin" required />
+        <br /><br />
+        <label for="date-fin-validite-pci" class="starlabel"
+          >Date fin de validité pièce identité:</label
+        >
+        <input class="personne-physique" type="date" name="date-fin-validite-pci" required />
+        <br /><br />
+        <label for="lieu-delivrance-pci" class="starlabel"
+          >Lieu délivrance pièce d’identité:</label
+        >
+        <input class="personne-physique" type="text" name="lieu-delivrance-pci" required />
+        <br /><br />
+        <label for="nationalite" class="starlabel">Nationalité:</label>
+        <select class="personne-physique" name="nationalite" required>
+          <option value="maroc">Maroc</option>
+          <option value="france">France</option>
+          <option value="espagne">Espagne</option>
+          <option value="italie">Italie</option>
+          <option value="tunisie">Tunisie</option>
+          <option value="egypte">Egypte</option>
+        </select>
+        <br /><br />
+        <label for="date-naissance" class="starlabel">Date de naissance:</label>
+        <input class="personne-physique" type="date" name="date-naissance" required />
+        <br /><br />
+        <label for="lieu-naissance" class="starlabel">Lieu de naissance:</label>
+        <input class="personne-physique" type="text" name="lieu-naissance" required />
+        <br /><br />
+        <label for="telephone" class="starlabel">Téléphone:</label>
+        <input class="personne-physique" type="text" name="telephone" required />
+        <br />
+        <label for="email"class="starlabel">Email:</label>
+        <input class="personne-physique" type="email" name="email" required />
+        <br /><br />
+        <label for="adresse" class="starlabel">Adresse:</label>
+        <textarea class="personne-physique" name="adresse" required></textarea>
+        <br /><br />
+        <label for="ville" class="starlabel">Ville:</label>
+        <select class="personne-physique" name="ville" required>
+          <option value="casablanca">Casablanca</option>
+          <option value="rabat">Rabat</option>
+          <option value="marrakech">Marrakech</option>
+          <option value="tanger">Tanger</option>
+          <option value="fes">Fes</option>
+        </select>
+        <br /><br />
+        <label for="pays" class="starlabel">Pays:</label>
+        <select class="personne-physique" name="pays" required>
+          <option value="maroc">Maroc</option>
+          <option value="france">France</option>
+          <option value="espagne">Espagne</option>
+          <option value="italie">Italie</option>
+          <option value="tunisie">Tunisie</option>
+          <option value="egypte">Egypte</option>
+        </select>
+      </div>
+      <div id="form-personne-morale" style="display: none">
+        <h2>Personne morale</h2>
+        <label for="raison-sociale" class="starlabel">Raison Sociale:</label>
+        <input class="personne-morale" type="text" name="raison-sociale" required />
+        <br /><br />
+        <label for="rc-ice" class="starlabel">RC/ICE:</label>
+        <input class="personne-morale" type="text" name="rc-ice" required />
+        <br /><br />
+        <label for="adresse" class="starlabel">Adresse:</label>
+        <textarea class="personne-morale" name="adresse" required></textarea>
+        <br /><br />
+        <label for="ville" class="starlabel">Ville:</label>
+        <select class="personne-morale" name="ville" required>
+          <option value="casablanca">Casablanca</option>
+          <option value="rabat">Rabat</option>
+          <option value="marrakech">Marrakech</option>
+          <option value="tanger">Tanger</option>
+          <option value="fes">Fes</option>
+        </select>
+        <br /><br />
+        <label for="pays" class="starlabel">Pays:</label>
+        <select class="personne-morale" name="pays" required>
+          <option value="maroc">Maroc</option>
+          <option value="france">France</option>
+          <option value="espagne">Espagne</option>
+          <option value="italie">Italie</option>
+          <option value="tunisie">Tunisie</option>
+          <option value="egypte">Egypte</option>
+        </select>
+      </div>
+
+      <br /><br />
+      <div id="error-message" style="display: none; color: red">
+        Veuillez remplir tous les champs et vérifier que les champs Téléphone et
+        Email sont valides.
+      </div>
+      <div id="success-message" style="display: none; color: green">
+        Formulaire valide.
+      </div>
+      <br /><br />
+      <!-- <input type="button" value="Réinitialiser" onclick="resetForm()" />
+      <input type="submit" value="Valider" onclick="return checkForm()" /> -->
+      <button onclick="resetForm()">Réinitialiser</button>
+      <button type="submit" onclick="return checkForm()" >Valider</button>
+    </form>
+  </body>
+</html>
