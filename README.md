@@ -15,4 +15,4 @@
 <h5>Test</h5>
 <img src="./images/console.png">
 <h2>Exercice 2</h2>
-<a href="./ex2/index.html">Exercice 2<a>
+<a href="http://htmlpreview.github.io/?https://github.com/mohcine-ahadjane/Test_Ribatis-Stage-PFE-2023/blob/main/ex2/index.html">HTML Preview Exercice 2<a>
